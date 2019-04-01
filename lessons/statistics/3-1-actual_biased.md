@@ -32,12 +32,13 @@ thinkplot.Pmf(children_pmf)
 thinkplot.Pmf(bias_pmf)
 thinkplot.show(xlabel='Number of Children per Household',
                ylabel='Probability', title='PMF of Children in Respondents\' Household')
-
-print('Actual Mean: {}'.format(children_pmf.Mean()))
-print('Observed Mean: {}'.format(bias_pmf.Mean()))
 ```
 ![](https://github.com/tcbonds/dsp/blob/master/lessons/statistics/PMF%20of%20Children%20in%20Households.png)
 
+```python
+print('Actual Mean: {}'.format(children_pmf.Mean()))
+print('Observed Mean: {}'.format(bias_pmf.Mean()))
+```
 Actual Mean: 1.024205155043831  
 Observed Mean: 1.024205155043831
 
