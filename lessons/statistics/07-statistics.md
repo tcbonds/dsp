@@ -86,14 +86,41 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+### Solution:
+```python
+# Probability that a twin is identical
+identical = (1/300)/(1/300+1/125)
+
+# Probability that a twin is fraternal
+fraternal= (1/125)/(1/300+1/125)
+
+# Probability that an identical twin is male
+male_given_identical = 1 # Elvis is male so his identical twin would have to be male
+
+# Probability that a fraternal twin is male
+male_given_fraternal = .5 # Equiprobable for male and female
+
+# Use law of total probability to find probability that a twin is male
+male = identical *  male_given_identical + fraternal * male_given_fraternal
+
+#Finally, use Bayes Theorem
+identical_given_male = identical*male_given_identical/male
+
+print('The probability that Elvis was an identical twin is {}%'.format(identical_given_male*100))
+```
+**The probability that Elvis was an identical twin is 45.45%**
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+**Similarities:**
+* They both make conclusions about probabilites of events occuring.
+
+**Differences**
+* Frequentists make conclusions about probabilities based on longterm samplings from theoretical populations and never make conclusions about instantaneous probabilites. Their idea of probability relies on fixed population parameters that are unknown. 
+* Bayesians make conclusions about instantaenous probabilities using information that has been true in the past. Thus, their idea of probability relies on a past model of a distribution of a population that never truly matches the actual distribution but that can be updated over time. 
 
 ---
 
